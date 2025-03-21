@@ -10,21 +10,22 @@
         android:id="@+id/tv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
         android:maxLines="2"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="以前一直是在布局里直接设置ConstraintLayout的约束，前几天遇到了一个有点特殊的需求，需要动态设置布局，xml布局使用的ConstraintLayout，所以就立马恶补动态设置所以就立" />
 
 
     <TextView
         android:id="@+id/tv_translate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/translate"
-        android:textSize="12sp"
         android:textColor="@color/color_a9f4ff"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_content"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="@string/translate" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

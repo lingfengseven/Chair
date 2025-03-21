@@ -68,7 +68,7 @@ class TranslateLayout @JvmOverloads constructor(
                 val spannableString = SpannableStringBuilder(result)
 
                 expandIcon?.let {
-                    spannableString.inSpans(ImageSpan(it, ALIGN_CENTER),object :ClickableSpan(){
+                    spannableString.inSpans(ImageSpan(it, ALIGN_CENTER), object : ClickableSpan() {
                         override fun onClick(widget: View) {
                             tvContent.maxLines = Int.MAX_VALUE
                             setupTranslate(data.copy(expand = true))
@@ -90,8 +90,8 @@ class TranslateLayout @JvmOverloads constructor(
             }
 
 
+            constraintSet.clone(layoutTranslate.root)
             if (enoughSpace) {
-                constraintSet.clone(layoutTranslate.root)
                 constraintSet.connect(
                     R.id.tv_translate,
                     ConstraintSet.BOTTOM,
@@ -100,13 +100,11 @@ class TranslateLayout @JvmOverloads constructor(
                 )
                 constraintSet.applyTo(layoutTranslate.root)
             } else {
-                constraintSet.clone(layoutTranslate.root)
                 constraintSet.connect(
                     R.id.tv_translate,
                     ConstraintSet.TOP,
                     R.id.tv_content,
-                    ConstraintSet.BOTTOM,
-                    12f.dp.toInt()
+                    ConstraintSet.BOTTOM
                 )
                 constraintSet.applyTo(layoutTranslate.root)
             }
